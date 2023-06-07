@@ -1,11 +1,12 @@
 import React from 'react';
 import Container from '../../../components/Container';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div>
             <Container>
-                <h3>this is homererffgg</h3>
+                <Banner></Banner>
             </Container>
         </div>
     );
