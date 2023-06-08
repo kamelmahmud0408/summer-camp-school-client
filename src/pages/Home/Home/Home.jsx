@@ -1,13 +1,14 @@
 import React from 'react';
-import Container from '../../../components/Container';
 import Banner from '../Banner/Banner';
+import PopularClass from '../PopularClass/PopularClass';
 
 const Home = () => {
     return (
         <div>
-            <Container>
-                <Banner></Banner>
-            </Container>
+            
+          <Banner></Banner>
+          <PopularClass></PopularClass>
+           
         </div>
     );
 };

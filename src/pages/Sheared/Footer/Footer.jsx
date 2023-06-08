@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from '../../../components/Container';
 
 const Footer = () => {
+
     return (
-        <Container>
+        
             <footer className='bg-neutral '>
                 <div className="footer p-10 text-neutral-content ">
                     <div className='ms-52'>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-        </Container>
+       
     );
 };
 

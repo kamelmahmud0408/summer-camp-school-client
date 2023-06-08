@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Football",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "John Smith",
+      "price": "$100",
+      "available_seats": 20
+    },
+    {
+      "name": "Basketball",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Sarah Johnson",
+      "price": "$80",
+      "available_seats": 15
+    },
+    {
+      "name": "Cricket",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "David Wilson",
+      "price": "$120",
+      "available_seats": 12
+    },
+    {
+      "name": "Tennis",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Emily Davis",
+      "price": "$90",
+      "available_seats": 10
+    },
+    {
+      "name": "Golf",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Michael Thompson",
+      "price": "$150",
+      "available_seats": 8
+    },
+    {
+      "name": "Athletics",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Jennifer Roberts",
+      "price": "$70",
+      "available_seats": 25
+    },
+    {
+      "name": "Rugby",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Daniel Harris",
+      "price": "$110",
+      "available_seats": 18
+    },
+    {
+      "name": "Swimming",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Olivia Adams",
+      "price": "$95",
+      "available_seats": 14
+    },
+    {
+      "name": "Formula 1",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Matthew Wilson",
+      "price": "$200",
+      "available_seats": 6
+    },
+    {
+      "name": "Boxing",
+      "image": "https://www.highlandstennis.com.au/wp-content/uploads/2022/03/journey-img.jpg",
+      "instructor": "Sophia Martinez",
+      "price": "$180",
+      "available_seats": 9
+    }
+  ]
