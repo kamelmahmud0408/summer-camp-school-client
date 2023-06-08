@@ -1,14 +1,35 @@
 import React from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Navbar = () => {
+    const { logOut, user } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch()
+    }
+
     const navItem = <>
-    <NavLink to='/'><li>Home</li></NavLink>
-    <NavLink to='/instructor'><li>Instructor</li></NavLink>
-    <NavLink to='/login'><li>Login</li></NavLink>
-        
-        
-    </>
+     <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
+         to='/instructor'>Instructor</NavLink></li>
+    
+
+        {
+            user ? <div>{
+                user && <span className='text-white flex flex-col lg:flex-row lg:items-center gap-4'>
+                    
+                    <li > <div className='tooltip text-start' data-tip={user.displayName}  ><img className='w-10 h-10 rounded-full tooltip' src={user.photoURL} alt="" /></div></li> <li className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text- font-semibold')}  onClick={handleLogOut} to='/login'>LogOut</NavLink></li> </span>
+            }</div> : <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')} to='/login'>Login</NavLink></li>
+        }
+
+    </> 
+   
     return (
     
             <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
@@ -24,7 +45,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost normal-case text-2xl">Summer School</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 space-x-6">
+                    <ul className="menu menu-horizontal px-1 space-x-6 items-center">
                         {navItem}
                     </ul>
                 </div>
