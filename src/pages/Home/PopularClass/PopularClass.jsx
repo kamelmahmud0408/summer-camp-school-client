@@ -25,7 +25,7 @@ const PopularClass = () => {
         const {_id,name,instructor,image,price,number_of_students}=item;
         console.log(item)
         if (user && user.email) {
-            const cartItem={enrolledId:_id, name, image, price ,email: user.email}
+            const cartItem={enrolledId:_id, name, image, price,instructor ,email: user.email}
             fetch('http://localhost:5000/enrolled',{
                 method:'POST',
                 headers:{
