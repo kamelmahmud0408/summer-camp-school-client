@@ -23,7 +23,7 @@ const Navbar = () => {
          <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
          to='/selectedclass'>My selected Class <div className="badge badge-secondary">{enrolledData?.length || 0}</div></NavLink></li>
          <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
-         to='/dashboard/myselectedclass'>Dashboard</NavLink></li>
+         to='/dashboard'>Dashboard</NavLink></li>
     
 
         {

@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import  { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
+import SocialLogin from '../Sheared/SocialLogin/SocialLogin';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
 
@@ -15,11 +17,36 @@ const SignUp = () => {
             const loggedUser=result.user;
             console.log(loggedUser)
             updateUserProfile(data.name,data.photoURL)
-            .then({})
-            .catch(error =>{
-                console.log(error)
+            .then(() => {
+                const saveUser = { name: data.name, image:data.photoURL, email: data.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'User created successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate('/');
+                        }
+                    })
+
+
+
             })
-        })
+            .catch(error => console.log(error))
+    })
+    
     }
 
     return (
@@ -75,7 +102,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <p className='text-center p-2'><small>Already have an account <Link to="/login">Login</Link></small></p>
-                    
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

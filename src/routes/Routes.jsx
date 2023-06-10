@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivetRoute from "./PrivetRoute";
 import Dashboard from "../layout/Dashboard";
 import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
+import ManageUser from "../pages/Dashboard/AdminPage/ManageUser";
 
 const router=createBrowserRouter([
     {
@@ -39,11 +40,15 @@ const router=createBrowserRouter([
     },
     {
         path:'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
         children:[
             {
                 path:'myselectedclass',
                 element: <MySelectedClass></MySelectedClass>
+            },
+            {
+                path:'manageuser',
+                element: <ManageUser></ManageUser>
             }
         ]
     }

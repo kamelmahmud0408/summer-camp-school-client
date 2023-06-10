@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import SocialLogin from '../Sheared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -62,6 +63,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center p-2'><small>Already have an account <Link to="/signup">Login</Link></small></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
