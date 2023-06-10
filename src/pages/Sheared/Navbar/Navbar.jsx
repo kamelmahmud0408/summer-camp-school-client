@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
+import useEnrolledCart from '../../../hooks/useEnrolledCart';
 
 const Navbar = () => {
     const { logOut, user } = useContext(AuthContext)
+    const [refetch,enrolledData]= useEnrolledCart()
 
     const handleLogOut = () => {
         logOut()
@@ -18,6 +20,8 @@ const Navbar = () => {
      <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
          to='/instructor'>Instructor</NavLink></li>
+         <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
+         to='/selectedclass'>My selected Class <div className="badge badge-secondary">{enrolledData?.length || 0}</div></NavLink></li>
     
 
         {
