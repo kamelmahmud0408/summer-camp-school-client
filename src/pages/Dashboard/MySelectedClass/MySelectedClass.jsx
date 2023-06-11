@@ -1,12 +1,12 @@
 import React from 'react';
-import useEnrolledCart from '../../../hooks/useEnrolledCart';
+import useselectedCart from '../../../hooks/useselectedCart';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const MySelectedClass = () => {
 
-    const [refetch, enrolledData] = useEnrolledCart()
-    console.log(enrolledData)
+    const [refetch, selectedData] = useselectedCart()
+    console.log(selectedData)
 
     const handleDelete=(item)=>{
          console.log(item)
@@ -20,7 +20,7 @@ const MySelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/enrolleddelete/${item}`, {
+                fetch(`http://localhost:5000/selecteddelete/${item}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -58,7 +58,7 @@ const MySelectedClass = () => {
                     </thead>
                     <tbody>
                         {
-                            enrolledData.map((rowData,index)=> <tr key={rowData._id} >
+                            selectedData.map((rowData,index)=> <tr key={rowData._id} >
                             <td>
                                {index+1} 
                             </td>

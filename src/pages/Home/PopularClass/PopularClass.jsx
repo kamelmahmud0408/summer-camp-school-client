@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
-import useEnrolledCart from '../../../hooks/useEnrolledCart';
+import useselectedCart from '../../../hooks/useselectedCart';
 
 const PopularClass = () => {
     const {user}=useContext(AuthContext)
     const location = useLocation()
     const navigate= useNavigate()
-    const [refetch]=useEnrolledCart()
+    const [refetch]=useselectedCart()
 
 
     const [popular, setpopular] = useState([])
@@ -25,8 +25,8 @@ const PopularClass = () => {
         const {_id,name,instructor,image,price,number_of_students}=item;
         console.log(item)
         if (user && user.email) {
-            const cartItem={enrolledId:_id, name, image, price,instructor ,email: user.email}
-            fetch('http://localhost:5000/enrolled',{
+            const cartItem={selectedId:_id, name, image, price,instructor ,email: user.email}
+            fetch('http://localhost:5000/selected',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
@@ -74,7 +74,7 @@ const PopularClass = () => {
                             <h2 className="font-bold text-xl">{item.name}</h2>
                             <p className='font-semibold'>Instructor Name: {item.instructor}</p>
                             <p>Price: ${item.price}</p>
-                            <p> Enrolled Student: {item.number_of_students}</p>
+                            <p> selected Student: {item.number_of_students}</p>
                             <div className="w-full mt-2 mb-0">
                                 <button onClick={()=>handleEnroll(item)} className="btn btn-error w-full">Enroll Now</button>
                             </div>
