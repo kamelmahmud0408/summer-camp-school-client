@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
 
     const { user } = useContext(AuthContext)
     const [myClass, setMyClass] = useState([])
+    
    
 
     useEffect(() => {
@@ -28,7 +30,9 @@ const MyClasses = () => {
                             <th>Class Name</th>
                             <th>Price</th>
                             <th>Status</th>
-                            <th>Available seates</th>
+                            <th>Seates</th>
+                            <th>Enrolled</th>
+                            <th>Feedback</th>
                             <th>Action</th>
 
                         </tr>
@@ -41,7 +45,11 @@ const MyClasses = () => {
                             <td>{classItem.price}</td>
                             <td>{classItem.status}</td>
                             <td>{classItem.available_seates}</td>
-                            <td><button className='btn btn-error btn-sm'>Update</button></td>
+                            <td>{classItem.available_seates}</td>
+                            <td>{classItem.available_seates}</td>
+                            <td>
+                                <Link to={`/dashboard/updateclass/${classItem._id}`}><button className='btn btn-error btn-xs'>Update</button></Link>
+                            </td>
 
                         </tr>)}
 
