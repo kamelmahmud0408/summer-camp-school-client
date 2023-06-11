@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaHome, FaWallet } from 'react-icons/fa';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
 
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin]=useAdmin()
 
     return (
         <>
