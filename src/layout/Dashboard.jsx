@@ -6,7 +6,8 @@ import useAdmin from '../hooks/useAdmin';
 const Dashboard = () => {
 
     // const isAdmin = true;
-    const [isAdmin]=useAdmin()
+    const [isAdmin] = useAdmin()
+    const isInstructor = true;
 
     return (
         <>
@@ -20,6 +21,7 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
+
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content space-y-2">
@@ -28,10 +30,13 @@ const Dashboard = () => {
                             isAdmin ? <>
                                 <li><NavLink to='/dashboard/manageclass'> <FaHome></FaHome> Mange Classes </NavLink></li>
                                 <li><NavLink to='/dashboard/manageuser'> <FaWallet></FaWallet> Maage Users</NavLink></li>
-                            </> : <>
-                                <li><NavLink to='/dashboard/myselectedclass'> <FaHome></FaHome> My selected Class</NavLink></li>
-                                <li><NavLink to='/dashboard/myselectedclass' > <FaWallet></FaWallet> My selected Class</NavLink></li>
-                            </>
+                            </> : isInstructor
+                                ? <><li><NavLink to='/dashboard/addclass'> <FaHome></FaHome> Add A Class</NavLink></li>
+                                <li><NavLink to='/dashboard/myclasses'> <FaHome></FaHome> My Classes</NavLink></li>
+                                 </> : <>
+                                    <li><NavLink to='/dashboard/myselectedclass'> <FaHome></FaHome> My selected Class</NavLink></li>
+                                    <li><NavLink to='/dashboard/myselectedclass' > <FaWallet></FaWallet> My selected Class</NavLink></li>
+                                </>
                         }
 
 

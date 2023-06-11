@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const ManageUser = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
     const handleAdmin = user => {
@@ -29,9 +31,25 @@ const ManageUser = () => {
             })
     }
 
-    
-    const handleInstructor=user=>{
 
+    const handleInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is instrucor now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
 
     return (
@@ -57,9 +75,10 @@ const ManageUser = () => {
                             <td><img className='w-14 h-14 rounded-full' src={user.image} alt="" /></td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.role==='admin' ? 'admin now': <button onClick={() => handleAdmin(user)} className='btn btn-error btn-sm'>Admin</button>
+                            <td>{user.role === 'admin' ? 'admin now' : <button onClick={() => handleAdmin(user)} className='btn btn-error btn-sm'>Admin</button>
+                            }</td>
+                            <td>{user.role === 'instructor' ? 'instructor now' :<button onClick={() => handleInstructor(user)} className='btn btn-error btn-sm'>Instructor</button>
                                 }</td>
-                            <td><button onClick={() => handleInstructor(user)} className='btn btn-error btn-sm'>Instructor</button></td>
 
                         </tr>)}
 

@@ -9,6 +9,8 @@ import PrivetRoute from "./PrivetRoute";
 import Dashboard from "../layout/Dashboard";
 import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
 import ManageUser from "../pages/Dashboard/AdminPage/ManageUser";
+import AdminRoute from "./AdminRoute";
+import ManageClass from "../pages/Dashboard/AdminPage/ManageClass";
 
 const router=createBrowserRouter([
     {
@@ -49,6 +51,10 @@ const router=createBrowserRouter([
             {
                 path:'manageuser',
                 element: <ManageUser></ManageUser>
+            },
+            {
+                path:'manageclass',
+                element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
             }
         ]
     }
