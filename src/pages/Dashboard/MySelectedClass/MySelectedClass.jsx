@@ -66,9 +66,9 @@ const MySelectedClass = () => {
                                <img className='w-14 h-14 rounded-full' src={rowData.image} alt="" />
                             </td>
                             <td>
-                                {rowData.name}
+                                {rowData.className}
                             </td>
-                            <td>{rowData?.instructor}</td>
+                            <td>{rowData?.instructorName}</td>
                             <td>${rowData.price}</td>
                             <td>
                                 <button onClick={()=>handleDelete(rowData._id)} className="btn btn-ghost btn-sm"><FaTrash></FaTrash></button>

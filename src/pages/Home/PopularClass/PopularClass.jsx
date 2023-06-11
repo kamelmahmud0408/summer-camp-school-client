@@ -14,7 +14,7 @@ const PopularClass = () => {
 
     const [popular, setpopular] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => {
                 setpopular(data)
@@ -22,10 +22,10 @@ const PopularClass = () => {
     }, [])
 
     const handleEnroll=(item)=>{
-        const {_id,name,instructor,image,price,number_of_students}=item;
+        const {_id,className,instructorName,available_seates,image,price,}=item;
         console.log(item)
         if (user && user.email) {
-            const cartItem={selectedId:_id, name, image, price,instructor ,email: user.email}
+            const cartItem={selectedId:_id, className, image, price,instructorName ,email: user.email}
             fetch('http://localhost:5000/selected',{
                 method:'POST',
                 headers:{
@@ -71,12 +71,12 @@ const PopularClass = () => {
                     <div className="card w-full bg-base-100 shadow-xl">
                         <figure><img className='h-72 rounded' src={item.image} alt="" /></figure>
                         <div className="card-body ">
-                            <h2 className="font-bold text-xl">{item.name}</h2>
-                            <p className='font-semibold'>Instructor Name: {item.instructor}</p>
+                            <h2 className="font-bold text-xl">{item.className}</h2>
+                            <p className='font-semibold'>Instructor Name: {item.instructorName}</p>
                             <p>Price: ${item.price}</p>
-                            <p> selected Student: {item.number_of_students}</p>
+                            <p> selected Student: {item.available_seates}</p>
                             <div className="w-full mt-2 mb-0">
-                                <button onClick={()=>handleEnroll(item)} className="btn btn-error w-full">Enroll Now</button>
+                                <button onClick={()=>handleEnroll(item)} className="btn btn-error w-full">Select</button>
                             </div>
                         </div>
                     </div>
