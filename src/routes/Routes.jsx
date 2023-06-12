@@ -16,6 +16,7 @@ import MyClasses from "../pages/Dashboard/InstructorPage/MyClasses";
 import InstructorRoute from "./InstructorRoute";
 import UpdateClass from "../pages/Dashboard/InstructorPage/UpdateClass";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import MyEnrooledClass from "../pages/Dashboard/MyEnrolledClass/MyEnrooledClass";
 
 const router=createBrowserRouter([
     {
@@ -53,6 +54,12 @@ const router=createBrowserRouter([
                 path:'myselectedclass',
                 element: <MySelectedClass></MySelectedClass>
             },
+            {
+                path:'myenrolledclass',
+                element:<MyEnrooledClass></MyEnrooledClass>
+                
+            }
+            ,
             {
                 path:'/dashboard/payment/:id',
                 element: <Payment></Payment>,

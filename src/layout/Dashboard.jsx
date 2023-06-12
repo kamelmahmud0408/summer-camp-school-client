@@ -36,7 +36,7 @@ const Dashboard = () => {
                                 ? <><li><NavLink to='/dashboard/addclass'> <FaHome></FaHome> Add A Class</NavLink></li>
                                 <li><NavLink to='/dashboard/myclasses'> <FaHome></FaHome> My Classes</NavLink></li>
                                  </> : <>
-                                    <li><NavLink to='/dashboard/myselectedclass'> <FaHome></FaHome> My selected Class</NavLink></li>
+                                    <li><NavLink to='/dashboard/myenrolledclass'> <FaHome></FaHome> My Enrolled Class</NavLink></li>
                                     <li><NavLink to='/dashboard/myselectedclass' > <FaWallet></FaWallet> My selected Class</NavLink></li>
                                 </>
                         }
