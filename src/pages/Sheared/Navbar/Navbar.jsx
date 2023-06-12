@@ -18,8 +18,8 @@ const Navbar = () => {
 
     const navItem = <>
      <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
-         to='/instructor'>Instructor</NavLink></li>
+        <li><NavLink to='instructor'>Instructor</NavLink></li>
+        <li><NavLink to='classes' >Classes</NavLink></li>
         
          <li><NavLink className={({ isActive }) => (isActive ? 'text-orange-500 font-semibold' : 'text-white font-semibold')}
          to='/dashboard'>Dashboard</NavLink></li>
