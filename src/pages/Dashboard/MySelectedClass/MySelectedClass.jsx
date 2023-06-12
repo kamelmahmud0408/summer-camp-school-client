@@ -2,6 +2,7 @@ import React from 'react';
 import useselectedCart from '../../../hooks/useselectedCart';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MySelectedClass = () => {
 
@@ -74,7 +75,7 @@ const MySelectedClass = () => {
                                 <button onClick={()=>handleDelete(rowData._id)} className="btn btn-ghost btn-sm"><FaTrash></FaTrash></button>
                             </td>
                             <td>
-                                <button className="btn btn-error btn-xs">Pay</button>
+                                <Link to='/dashboard/payment'><button className="btn btn-error btn-xs">Pay</button></Link>
                             </td>
                         </tr>)  
                         }
