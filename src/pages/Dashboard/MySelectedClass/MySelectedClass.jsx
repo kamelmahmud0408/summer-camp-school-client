@@ -75,7 +75,7 @@ const MySelectedClass = () => {
                                 <button onClick={()=>handleDelete(rowData._id)} className="btn btn-ghost btn-sm"><FaTrash></FaTrash></button>
                             </td>
                             <td>
-                                <Link to='/dashboard/payment'><button className="btn btn-error btn-xs">Pay</button></Link>
+                                <Link to={`/dashboard/payment/${rowData._id}`}><button className="btn btn-error btn-xs">Pay</button></Link>
                             </td>
                         </tr>)  
                         }

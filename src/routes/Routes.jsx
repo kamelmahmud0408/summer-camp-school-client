@@ -54,8 +54,9 @@ const router=createBrowserRouter([
                 element: <MySelectedClass></MySelectedClass>
             },
             {
-                path:'payment',
-                element: <Payment></Payment>
+                path:'/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader:({params})=>fetch(`http://localhost:5000/selectedById/${params.id}`)
             },
             {
                 path:'manageuser',
