@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import Swal from 'sweetalert2';
 
 
 const ManageClass = () => {
 
+    const [btnDisible,setBtnDisible]=useState(false)
     // const [manageClass, setManageClass] = useState([])
     // const [refetch] = useselectedCart()
     // useEffect(() => {
@@ -18,7 +19,7 @@ const ManageClass = () => {
     const {refetch, data: manageClass=[]}=useQuery({
         queryKey:['class', ],
         queryFn: async()=>{
-            const res = await fetch('http://localhost:5000/class')
+            const res = await fetch('http://localhost:5000/mangeclass')
             return res.json()
         }
         
@@ -32,6 +33,7 @@ const ManageClass = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount) {
+                    
                     refetch()
                     Swal.fire({
                         position: 'top-end',
@@ -41,9 +43,10 @@ const ManageClass = () => {
                         timer: 1500
                     })
                 }
+                
             })
 
-
+      
     }
 
     const handleDeny = (item) => {
@@ -96,7 +99,7 @@ const ManageClass = () => {
                         <td>{classItem.status}</td>
                         <td>{classItem.available_seates}</td>
                         <td>{
-                            classItem.status === 'approved' ? 'Approved' : <button onClick={() => handleApproved(classItem)} className='btn btn-error btn-xs'>Approve</button>
+                            classItem.status === 'approved' ? 'Approved' : <button onClick={() => handleApproved(classItem)} disabled={btnDisible} className='btn btn-error btn-xs'>Approve</button>
                         }
                         </td>
                         <td>{

@@ -29,7 +29,7 @@ const PopularClass = () => {
                             <h2 className="font-bold text-xl">{item.className}</h2>
                             <p className='font-semibold'>Instructor Name: {item.instructorName}</p>
                             <p>Price: ${item.price}</p>
-                            <p> selected Student: {item.available_seates}</p>
+                            <p>Available Students : {item.available_seates}</p>
                             
                         </div>
                     </div>

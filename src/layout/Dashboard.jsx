@@ -30,8 +30,8 @@ const Dashboard = () => {
                         {/* Sidebar content here */}
                         {
                             isAdmin ? <>
-                                <li><NavLink to='/dashboard/manageclass'> <FaHome></FaHome> Mange Classes </NavLink></li>
-                                <li><NavLink to='/dashboard/manageuser'> <FaWallet></FaWallet> Maage Users</NavLink></li>
+                                <li><NavLink to='/dashboard/manageclass'> <FaHome></FaHome> Manage Classes </NavLink></li>
+                                <li><NavLink to='/dashboard/manageuser'> <FaWallet></FaWallet> Manage Users</NavLink></li>
                             </> : isInstructor
                                 ? <><li><NavLink to='/dashboard/addclass'> <FaHome></FaHome> Add A Class</NavLink></li>
                                 <li><NavLink to='/dashboard/myclasses'> <FaHome></FaHome> My Classes</NavLink></li>
@@ -46,7 +46,7 @@ const Dashboard = () => {
                         <div className="divider">OR</div>
                         <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                         <li><NavLink to='/instructor'>Instructor</NavLink></li>
-                        <li></li>
+                        <li><NavLink to='/classes'>Classes</NavLink></li>
                     </ul>
 
                 </div>

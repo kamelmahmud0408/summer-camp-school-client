@@ -76,7 +76,7 @@ const ClassesPage = () => {
                                 <h2 className="font-bold text-xl">{item.className}</h2>
                                 <p className='font-semibold'>Instructor Name: {item.instructorName}</p>
                                 <p>Price: ${item.price}</p>
-                                <p> selected Student: {item.available_seates}</p>
+                                <p> Available Seates: {item.available_seates}</p>
                                 <div className="w-full mt-2 mb-0">
                                     <button onClick={() => handleEnroll(item)} className="btn btn-error w-full">Select</button>
                                 </div>

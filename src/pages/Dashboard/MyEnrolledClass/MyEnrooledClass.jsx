@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 
 const MyEnrooledClass = () => {
-
+ const {user}=useContext(AuthContext)
     const [enRolledClass, setEnrooledClass] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/payments')
+        fetch(`http://localhost:5000/payments?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setEnrooledClass(data)
