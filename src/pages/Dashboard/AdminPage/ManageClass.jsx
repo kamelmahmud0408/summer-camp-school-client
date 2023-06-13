@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
 const ManageClass = () => {
 
-    const [btnDisible,setBtnDisible]=useState(false)
+    const [btnDisible, setBtnDisible] = useState(false)
+   
+  const [showModal, setShowModal] = useState(false); 
     // const [manageClass, setManageClass] = useState([])
     // const [refetch] = useselectedCart()
     // useEffect(() => {
@@ -16,13 +18,13 @@ const ManageClass = () => {
     //         })
     // }, [])
 
-    const {refetch, data: manageClass=[]}=useQuery({
-        queryKey:['class', ],
-        queryFn: async()=>{
+    const { refetch, data: manageClass = [] } = useQuery({
+        queryKey: ['class',],
+        queryFn: async () => {
             const res = await fetch('http://localhost:5000/mangeclass')
             return res.json()
         }
-        
+
     })
 
     const handleApproved = (item) => {
@@ -33,7 +35,7 @@ const ManageClass = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount) {
-                    
+
                     refetch()
                     Swal.fire({
                         position: 'top-end',
@@ -43,10 +45,10 @@ const ManageClass = () => {
                         timer: 1500
                     })
                 }
-                
+
             })
 
-      
+
     }
 
     const handleDeny = (item) => {
@@ -70,6 +72,13 @@ const ManageClass = () => {
 
 
     }
+
+    {/* You can open the modal using ID.showModal() method */ }
+
+    const handleSendFeedback = (id) => {
+        setShowModal(true); // Open the modal
+      };
+
 
     return (
         <div className="overflow-x-auto w-full h-full my-10">
@@ -106,7 +115,25 @@ const ManageClass = () => {
                             classItem.status === 'denied' ? 'Denied' : <button onClick={() => handleDeny(classItem)} className='btn btn-error btn-xs'>Deny</button>
                         }
                         </td>
-                        <td><button className='btn btn-error btn-xs'>Feedback</button>
+                        <td>
+                            {showModal && (
+                                <dialog id="my_modal_3" className="modal">
+                                    <form method="dialog" className="modal-box">
+                                        <button
+                                            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                                            onClick={() => setShowModal(false)} // Close the modal
+                                        >
+                                            ✕
+                                        </button>
+                                        <h3 className="font-bold text-lg">Hello!</h3>
+                                        <p className="py-4">Press ESC key or click on ✕ button to close</p>
+                                    </form>
+                                </dialog>
+                            )}
+
+                            <button className="btn" onClick={()=>handleSendFeedback(classItem._id)}>
+                                Open Modal
+                            </button>
                         </td>
 
 

@@ -21,6 +21,11 @@ const AddClass = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+        // const datas={data}
+        // const classData={
+        //     datas,
+        //     student:0,
+        // }
 
         fetch('http://localhost:5000/class', {
             method: 'POST',
@@ -132,6 +137,18 @@ const AddClass = () => {
                         />
 
                     </div>
+                    <div className='mb-3'>
+                        <h3 className='text-xl font-semibold mb-3'>Enrooled Students</h3>
+
+                        <input
+                            className="w-full p-2 border"
+                            {...register("student")}
+                            placeholder="Enrolled Student"
+
+                        />
+
+                    </div>
+
 
                    
                     

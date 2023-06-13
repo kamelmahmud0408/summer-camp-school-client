@@ -45,7 +45,7 @@ const MyClasses = () => {
                             <td>{classItem.price}</td>
                             <td>{classItem.status}</td>
                             <td>{classItem.available_seates}</td>
-                            <td>{classItem.available_seates}</td>
+                            <td>{classItem.student}</td>
                             <td>{classItem.available_seates}</td>
                             <td>
                                 <Link to={`/dashboard/updateclass/${classItem._id}`}><button className='btn btn-error btn-xs'>Update</button></Link>
