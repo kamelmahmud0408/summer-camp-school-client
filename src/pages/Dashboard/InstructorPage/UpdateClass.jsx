@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../provider/AuthProvider';
-import { useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateClass = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/dashboard/myclasses'
 
     const { user } = useContext(AuthContext)
     const {id}=useParams()
@@ -38,7 +42,7 @@ const UpdateClass = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
-                // navigate(from, { replace: true })
+                 navigate(from, { replace: true })
             })
     }
 

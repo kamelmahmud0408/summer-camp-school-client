@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AddClass = () => {
 
-    // const navigate = useNavigate()
-    // const location = useLocation()
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    // const from = location.state?.from?.pathname || '/myclasses'
+    const from = location.state?.from?.pathname || '/dashboard/myclasses'
 
 
     const { user } = useContext(AuthContext)
@@ -21,18 +22,24 @@ const AddClass = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        // const datas={data}
-        // const classData={
-        //     datas,
-        //     student:0,
-        // }
-
+        const {className,image,instructorName,email,price,available_seates}=data;
+  const classItems={
+    className,
+    image,
+    instructorName,
+    email,
+    price,
+    available_seates,
+    status:"pending",
+    student:0,
+    feedback:""
+  }
         fetch('https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/class', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(classItems)
 
         })
             .then(res => res.json())
@@ -46,7 +53,7 @@ const AddClass = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
-                // navigate(from, { replace: true })
+                 navigate(from, { replace: true })
             })
     }
 
@@ -126,32 +133,7 @@ const AddClass = () => {
                         />
 
                     </div>
-                    <div className='mb-3'>
-                        <h3 className='text-xl font-semibold mb-3'>Status</h3>
-
-                        <input
-                            className="w-full p-2 border"
-                            {...register("status")}
-                            placeholder="Status"
-
-                        />
-
-                    </div>
-                    <div className='mb-3'>
-                        <h3 className='text-xl font-semibold mb-3'>Enrooled Students</h3>
-
-                        <input
-                            className="w-full p-2 border"
-                            {...register("student")}
-                            placeholder="Enrolled Student"
-
-                        />
-
-                    </div>
-
-
-                   
-                    
+                       
                 </div>
 
 

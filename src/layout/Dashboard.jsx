@@ -1,18 +1,25 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaHome, FaWallet } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
 
-    // const isAdmin = true;
     const [isAdmin] = useAdmin()
-    // const isInstructor = true;
-    const [isInstructor]=useInstructor()
+
+    const [isInstructor] = useInstructor()
 
     return (
         <>
+        <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+        className="drawer lg:drawer-open"
+      >
 
             <div className="drawer lg:drawer-open">
 
@@ -34,8 +41,8 @@ const Dashboard = () => {
                                 <li><NavLink to='/dashboard/manageuser'> <FaWallet></FaWallet> Manage Users</NavLink></li>
                             </> : isInstructor
                                 ? <><li><NavLink to='/dashboard/addclass'> <FaHome></FaHome> Add A Class</NavLink></li>
-                                <li><NavLink to='/dashboard/myclasses'> <FaHome></FaHome> My Classes</NavLink></li>
-                                 </> : <>
+                                    <li><NavLink to='/dashboard/myclasses'> <FaHome></FaHome> My Classes</NavLink></li>
+                                </> : <>
                                     <li><NavLink to='/dashboard/myenrolledclass'> <FaHome></FaHome> My Enrolled Class</NavLink></li>
                                     <li><NavLink to='/dashboard/myselectedclass' > <FaWallet></FaWallet> My selected Class</NavLink></li>
                                     <li><NavLink to='/dashboard/history' > <FaWallet></FaWallet> Payment History</NavLink></li>
@@ -51,6 +58,7 @@ const Dashboard = () => {
 
                 </div>
             </div>
+            </motion.div>
         </>
     );
 };
