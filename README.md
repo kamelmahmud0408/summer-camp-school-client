@@ -21,4 +21,4 @@
 * Tailwind CSS: CSS framework for styling
 * Firebase: Backend as a Service (BaaS) platform for additional functionality
 
-## [EliteSports Academy](https://baby-toys-marketlace.web.app/)
+## [EliteSports Academy](https://summer-camp-school-b31df.web.app/)

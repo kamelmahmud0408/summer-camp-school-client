@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Banner from '../Banner/Banner';
 import PopularClass from '../PopularClass/PopularClass';
 import PopularInstructor from './PopularInstructor/PopularInstructor';
 import CustomerReview from './CustomerReview/CustomerReview';
 
 const Home = () => {
+  
     return (
-        <div>
+        <div  >
             
           <Banner></Banner>
           <PopularClass></PopularClass>

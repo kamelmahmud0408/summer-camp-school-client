@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import useselectedCart from '../../hooks/useselectedCart';
 import Swal from 'sweetalert2';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
@@ -12,11 +11,10 @@ const ClassesPage = () => {
     console.log(user)
     const location = useLocation();
     const navigate = useNavigate();
-    // const [refetch] = useselectedCart();
+   
     const [allClasses, setAllClasses] = useState([]);
 
     const [isAdmin] = useAdmin()
-    // const isInstructor = true;
     const [isInstructor]=useInstructor()
 
 
@@ -50,7 +48,7 @@ const ClassesPage = () => {
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.insertedId) {
-                        refetch();
+                       
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
