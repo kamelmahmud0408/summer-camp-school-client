@@ -12,7 +12,7 @@ const ManageUser = () => {
 
     const handleAdmin = user => {
         console.log(user)
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -33,7 +33,7 @@ const ManageUser = () => {
 
 
     const handleInstructor = user => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -75,9 +75,9 @@ const ManageUser = () => {
                             <td><img className='w-14 h-14 rounded-full' src={user.image} alt="" /></td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.role === 'admin' ? 'admin now' : <button onClick={() => handleAdmin(user)} className='btn btn-error btn-sm'>Admin</button>
+                            <td>{user.role === 'admin' ? 'admin now' : <button onClick={() => handleAdmin(user)} className='btn btn-error btn-sm' disabled={user.role==='instructor'}>Admin</button>
                             }</td>
-                            <td>{user.role === 'instructor' ? 'instructor now' :<button onClick={() => handleInstructor(user)} className='btn btn-error btn-sm'>Instructor</button>
+                            <td>{user.role === 'instructor' ? 'instructor now' :<button onClick={() => handleInstructor(user)} className='btn btn-error btn-sm' disabled={user.role==='admin'}>Instructor</button>
                                 }</td>
 
                         </tr>)}

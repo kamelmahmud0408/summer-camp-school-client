@@ -12,7 +12,7 @@ const Payment = () => {
     const { id } = useParams()
     const [selectedData,setselectedData]=useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/selectedById/${id}`)
+        fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/selectedById/${id}`)
         .then(res =>res.json())
         .then(data=> {
             setselectedData(data)

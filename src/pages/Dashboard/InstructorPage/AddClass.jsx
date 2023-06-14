@@ -27,7 +27,7 @@ const AddClass = () => {
         //     student:0,
         // }
 
-        fetch('http://localhost:5000/class', {
+        fetch('https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/class', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -75,7 +75,7 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader:({params})=>fetch(`http://localhost:5000/selectedById/${params.id}`)
+                loader:({params})=>fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/selectedById/${params.id}`)
             },
             {
                 path:'manageuser',
@@ -96,7 +96,7 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/updateclass/:id',
                 element: <UpdateClass></UpdateClass>,
-                loader:({params})=>fetch(`http://localhost:5000/class/${params.id}`)
+                loader:({params})=>fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/class/${params.id}`)
                 
             }
         ]

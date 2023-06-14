@@ -13,7 +13,7 @@ const useselectedCart = () => {
         queryKey: ['selected', user?.email],
         enabled: !loading,
         // queryFn: async () => {
-        //     const res = await fetch(`http://localhost:5000/selected?email=${user.email}`, {
+        //     const res = await fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/selected?email=${user.email}`, {
         //         headers: {
         //             authorization: `bearer ${token}`
         //         }

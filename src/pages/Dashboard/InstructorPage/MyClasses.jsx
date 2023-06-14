@@ -10,7 +10,7 @@ const MyClasses = () => {
    
 
     useEffect(() => {
-        const url = `http://localhost:5000/myclass?email=${user?.email}`;
+        const url = `https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/myclass?email=${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

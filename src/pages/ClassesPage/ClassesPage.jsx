@@ -21,7 +21,7 @@ const ClassesPage = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/class')
             .then((res) => res.json())
             .then((data) => {
                 setAllClasses(data);
@@ -40,7 +40,7 @@ const ClassesPage = () => {
                 instructorName,
                 email: user.email,
             };
-            fetch('http://localhost:5000/selected', {
+            fetch('https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/selected', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

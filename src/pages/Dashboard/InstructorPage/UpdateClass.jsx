@@ -19,7 +19,7 @@ const UpdateClass = () => {
     const onSubmit = (data) => {
         console.log(data)
 
-        fetch(`http://localhost:5000/class/${id}`, {
+        fetch(`https://summer-camp-learning-school-server-kamelmahmud0408.vercel.app/class/${id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
