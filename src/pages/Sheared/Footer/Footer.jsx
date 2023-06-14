@@ -9,9 +9,9 @@ const Footer = () => {
                 <div className=''>
                     <div className='ms-6 text-center'>
                         <img className='w-14 h-14 text-white text-center' src="https://i.ibb.co/R4pNZMk/initial-letter-q-tennis-club-logo-design-template-removebg-preview.png" alt="" />
-                        <h2 className='font-bold text-lg'>Sport <span className='text-orange-500'>Academy</span></h2>
+                        <h2 className='font-bold text-lg'>EliteSports  <span className='text-orange-500'>Academy</span></h2>
                     </div>
-                    <p>Sports Academy Ltd.<br />Providing reliable tech since 1992</p>
+                    <p>EliteSports Academy Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             <div className="footer footer-center p-4 text-base-content">
                 <div className='text-white p-4'>
-                    <p>Copyright © 2023 - All right reserved by  Sports Academy Ltd</p>
+                    <p>Copyright © 2023 - All right reserved by  EliteSports Academy Ltd</p>
                 </div>
             </div>
         </footer>

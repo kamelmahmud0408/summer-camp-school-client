@@ -61,6 +61,7 @@ const ManageClass = () => {
 
     }
 
+    
    
 
 
@@ -100,7 +101,7 @@ const ManageClass = () => {
                         }
                         </td>
                         <td>
-                            
+                        <button onClick={() => handleFeedback(classItem)} className='btn btn-error btn-xs' disabled={classItem.status ==='approved'}>Feedback</button> 
                         </td>
 
 

@@ -20,7 +20,7 @@ const CustomerReview = () => {
                 </div>
                 <div className="card-body mt-8">
 
-                    <p>The service at this academy is exeptional.They  to help me find the perfect toy. Appriciate the focus on sustainable and eco-freindly toys at this shop. Its so important our kids</p>
+                    <p>Enrolling our child in EliteSports Academy was one of the best decisions we made. The academy offers a well-rounded program that focuses not only on technical training but also on physical fitness, mental conditioning, and character building. The coaches are knowledgeable, passionate, and dedicated to helping each child reach their full potential. Our child's confidence has soared, and they have developed a true love for the sport. We highly recommend EliteSports Academy to any guardian looking for a top-notch sports academy.</p>
 
                 </div>
             </div>
@@ -34,7 +34,7 @@ const CustomerReview = () => {
                 </div>
                 <div className="card-body mt-8">
 
-                    <p>I am always impressive by the wide range of toys this store has to offer. It's my go to for all things playtime.The customer service at this shop is exeptional.They went above and beyond to help me find the perfect toy </p>
+                    <p>Our experience with EliteSports Academy has been nothing short of exceptional. The coaches and staff go above and beyond to provide a nurturing and supportive environment for our child. They focus not only on skill development but also on instilling important values like teamwork, discipline, and sportsmanship. Our child has shown tremendous growth, both on and off the field, and we couldn't be happier with the results. Thank you, EliteSports Academy, for providing such a fantastic platform for young athletes to thrive </p>
 
                 </div>
             </div>
@@ -48,7 +48,7 @@ const CustomerReview = () => {
                 </div>
                 <div className="card-body mt-8">
 
-                    <p>In this shop, The customer service is exeptional.They went above and beyond to help me find the perfect toy. Appriciate the focus on sustainable and eco-freindly toys at this shop. Its so important our kids</p>
+                    <p>EliteSports Academy has exceeded our expectations in every aspect. The academy's comprehensive approach to training, including physical conditioning, technical skills, and tactical awareness, has made a significant impact on our child's performance. The coaches create a positive and motivating atmosphere that encourages growth and pushes athletes to their limits. We appreciate the emphasis on character development and values like respect, resilience, and sportsmanship. EliteSports Academy truly goes above and beyond to foster a love for the sport and prepare young athletes for success.</p>
 
                 </div>
             </div>

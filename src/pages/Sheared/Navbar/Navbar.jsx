@@ -47,7 +47,7 @@ const Navbar = () => {
                 </div>
                 <div className='ms-6 text-center'>
                     <img className='w-14 h-14 text-white text-center' src="https://i.ibb.co/R4pNZMk/initial-letter-q-tennis-club-logo-design-template-removebg-preview.png" alt="" />
-                    <h2 className='font-bold text-lg'>Sport <span className='text-orange-500'>Academy</span></h2>
+                    <h2 className='font-bold text-lg'>EliteSports <span className='text-orange-500'>Academy</span></h2>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
